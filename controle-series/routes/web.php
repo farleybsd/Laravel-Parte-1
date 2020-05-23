@@ -15,21 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/series', function () {
-
-    $series = [
-        'Greys\'s Anatomy',
-        'Lost',
-        'Agente of Shild'
-    ];
-
-    $html = "<ul>";
-
-    foreach ($series as $serie) {
-        $html .= "<li>$serie</li>";
-    }
-
-    $html .= "</ul>";
-
-    return $html;
-});
+Route::get('/series', 'SeriesController@listarseries');

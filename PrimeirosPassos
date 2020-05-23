@@ -13,4 +13,8 @@ php artisan serve
 
 Trabalhando com Laravel
 
-Iniciando pelo arquivos das rotas routes -> Web.PHP
+1 -> Iniciando pelo arquivos das rotas routes -> Web.PHP
+
+2 -> Adicionar um controler App/Http/Controller
+
+3 -> Adicionar ma View  Resources/Views
