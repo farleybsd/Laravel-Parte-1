@@ -33,4 +33,9 @@ class SeriesController extends Controller
             'series' => $series // 'series' parametro que esta no html
         ]);
     }
+
+    public function create()
+    {
+        return view('series.create');
+    }
 }
