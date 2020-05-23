@@ -1,0 +1,16 @@
+1
+Abrir o Arquivo PHP.INI
+extension=pdo_sqlite
+
+2
+Instalando o Laravel
+composer create-project --prefer-dist laravel/laravel controle-series 5.8.*
+
+3
+Subindo um Servidor
+php artisan serve
+
+
+Trabalhando com Laravel
+
+Iniciando pelo arquivos das rotas routes -> Web.PHP
