@@ -29,6 +29,8 @@ class SeriesController extends Controller
 
         $html .= "</ul>";
 
-        return $html;
+        return  view('series.index', [
+            'series' => $series // 'series' parametro que esta no html
+        ]);
     }
 }
