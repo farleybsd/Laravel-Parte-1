@@ -22,3 +22,8 @@ Trabalhando com Laravel
 
 Dica css
 https://get.foundation/
+
+
+
+Database 
+Config -> Database.php na raiz .env
