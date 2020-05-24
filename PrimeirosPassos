@@ -19,6 +19,10 @@ Trabalhando com Laravel
 
 3 -> Adicionar ma View  Resources/Views
 
+4 ->  Configurar Banco  e Migrations 
+
+5 -> Criar Models 
+-> App -> Series.php
 
 Dica css
 https://get.foundation/
@@ -31,3 +35,6 @@ Config -> Database.php na raiz .env
 
 Comandos lavarel
 php artisan list
+
+se der erro de inser copia a dll php_sqlite
+para C:\phpdev\ext

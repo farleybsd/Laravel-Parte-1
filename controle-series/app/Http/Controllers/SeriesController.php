@@ -3,6 +3,7 @@
 namespace App\http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Serie;
 use Illuminate\Http\Request;
 use SebastianBergmann\CodeCoverage\Report\PHP;
 
@@ -37,5 +38,16 @@ class SeriesController extends Controller
     public function create()
     {
         return view('series.create');
+    }
+
+
+
+    public function store(Request $request)
+    {
+
+        $nome = $request->nome;
+        $serie = new Serie();
+        $serie->nome = $nome;
+        var_dump($serie->save());
     }
 }
