@@ -1,0 +1,6 @@
+Criar Migration 
+
+php artisan make:migration criar_tabela_series
+
+execultando uma migration
+php artisan migrate 

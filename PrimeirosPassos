@@ -27,3 +27,7 @@ https://get.foundation/
 
 Database 
 Config -> Database.php na raiz .env
+
+
+Comandos lavarel
+php artisan list
