@@ -31,10 +31,19 @@ class SeriesController extends Controller
         // $html .= "</ul>";
 
         //$series = Serie::all();
-        $series = Serie::query()->orderBy('nome')->get();
-        return  view('series.index', [
-            'series' => $series // 'series' parametro que esta no html
-        ]);
+
+
+        // return  view('series.index', [
+        //     'series' => $series // 'series' parametro que esta no html
+
+        // ], 'mensagem');
+
+        $series = serie::query()
+            ->orderBy('nome')
+            ->get();
+        $mensagem = $request->session()->get('mensagem');
+        //$request->session()->remove('mensagem');
+        return view('series.index', compact('series',  'mensagem'));
     }
 
     public function create()
@@ -52,14 +61,28 @@ class SeriesController extends Controller
         // $serie->nome = $nome;
         // var_dump($serie->save());
 
-        //    $serie = Serie::create($request->all());
+        // $serie = Serie::create($request->all());
 
-        $nome = $request->nome;
-        $serie = Serie::create([
-            'nome' => $nome
-        ]);
+        // // $nome = $request->nome;
+        // // $serie = Serie::create([
+        // //     'nome' => $nome
+        // // ]);
 
-        //echo "Série com id ($serie->id) criada: ($serie->nome)";
+        // $request->session()
+        //     ->put(
+        //         'mensagem',
+        //         "Série {$serie->id} criada com sucesso {$serie->nome}"
+        //     );
+
+        // //echo "Série com id ($serie->id) criada: ($serie->nome)";
+        // return redirect('/series');
+
+        $serie = Serie::create($request->all());
+        $request->session()
+            ->flash(
+                'mensagem',
+                "Série {$serie->id} criada com sucesso {$serie->nome}" //ler e ja apaga a sessao
+            );
         return redirect('/series');
     }
 }
