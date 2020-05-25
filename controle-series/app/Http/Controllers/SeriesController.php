@@ -83,7 +83,7 @@ class SeriesController extends Controller
                 'mensagem',
                 "Série {$serie->id} criada com sucesso {$serie->nome}" //ler e ja apaga a sessao
             );
-        return redirect('/series');
+        return redirect()->route('listar_series');
     }
 
     public function destroy(Request $request)
@@ -95,6 +95,6 @@ class SeriesController extends Controller
                 'mensagem',
                 "Serie removida com Sucesso" //ler e ja apaga a sessao
             );
-        return redirect('/series');
+        return redirect()->route('listar_series');
     }
 }
