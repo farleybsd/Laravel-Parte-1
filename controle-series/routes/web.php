@@ -13,6 +13,8 @@
 
 //use Illuminate\Routing\Route;
 
+//use Illuminate\Routing\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,3 +24,5 @@ Route::get('/series', 'SeriesController@index');
 Route::get('/series/criar', 'SeriesController@create');
 
 Route::post('/series/criar', 'SeriesController@store');
+
+Route::delete('/series/remover/{id}', 'SeriesController@destroy');
