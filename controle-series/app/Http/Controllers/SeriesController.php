@@ -77,6 +77,11 @@ class SeriesController extends Controller
         // //echo "Série com id ($serie->id) criada: ($serie->nome)";
         // return redirect('/series');
 
+        $request->validate([
+            'nome' => 'required|min:3'
+
+        ]);
+
         $serie = Serie::create($request->all());
         $request->session()
             ->flash(
