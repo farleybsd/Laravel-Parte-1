@@ -30,7 +30,8 @@ class SeriesController extends Controller
 
         // $html .= "</ul>";
 
-        $series = Serie::all();
+        //$series = Serie::all();
+        $series = Serie::query()->orderBy('nome')->get();
         return  view('series.index', [
             'series' => $series // 'series' parametro que esta no html
         ]);
@@ -58,6 +59,7 @@ class SeriesController extends Controller
             'nome' => $nome
         ]);
 
-        echo "Série com id ($serie->id) criada: ($serie->nome)";
+        //echo "Série com id ($serie->id) criada: ($serie->nome)";
+        return redirect('/series');
     }
 }
