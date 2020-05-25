@@ -3,6 +3,7 @@
 namespace App\http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SeriesFormRequest;
 use App\Serie;
 use Illuminate\Http\Request;
 use SebastianBergmann\CodeCoverage\Report\PHP;
@@ -53,7 +54,7 @@ class SeriesController extends Controller
 
 
 
-    public function store(Request $request)
+    public function store(SeriesFormRequest $request)
     {
 
         //$nome = $request->nome;
@@ -77,10 +78,7 @@ class SeriesController extends Controller
         // //echo "Série com id ($serie->id) criada: ($serie->nome)";
         // return redirect('/series');
 
-        $request->validate([
-            'nome' => 'required|min:3'
 
-        ]);
 
         $serie = Serie::create($request->all());
         $request->session()

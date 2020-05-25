@@ -38,3 +38,8 @@ php artisan list
 
 se der erro de inser copia a dll php_sqlite
 para C:\phpdev\ext
+
+
+Criando um form request
+
+php artisan make:request SeriesFormRequest
