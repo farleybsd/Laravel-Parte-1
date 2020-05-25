@@ -8,4 +8,5 @@ class Serie extends Model
 {
     protected $table = 'series';
     public $timestamps = false;
+    public $fillable = ['nome'];
 }

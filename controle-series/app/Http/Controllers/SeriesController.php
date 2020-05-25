@@ -16,20 +16,21 @@ class SeriesController extends Controller
         //var_dump($request->query()); //http://127.0.0.1:8000/series?parametro=valor?nome=%27Farley%27?idade=28 traz todos parametros como array
         //exit();
 
-        $series = [
-            'Greys\'s Anatomy',
-            'Lost',
-            'Agente of Shild'
-        ];
+        // $series = [
+        //     'Greys\'s Anatomy',
+        //     'Lost',
+        //     'Agente of Shild'
+        // ];
 
-        $html = "<ul>";
+        // $html = "<ul>";
 
-        foreach ($series as $serie) {
-            $html .= "<li>$serie</li>";
-        }
+        // foreach ($series as $serie) {
+        //     $html .= "<li>$serie</li>";
+        // }
 
-        $html .= "</ul>";
+        // $html .= "</ul>";
 
+        $series = Serie::all();
         return  view('series.index', [
             'series' => $series // 'series' parametro que esta no html
         ]);
@@ -45,9 +46,18 @@ class SeriesController extends Controller
     public function store(Request $request)
     {
 
+        //$nome = $request->nome;
+        // $serie = new Serie();
+        // $serie->nome = $nome;
+        // var_dump($serie->save());
+
+        //    $serie = Serie::create($request->all());
+
         $nome = $request->nome;
-        $serie = new Serie();
-        $serie->nome = $nome;
-        var_dump($serie->save());
+        $serie = Serie::create([
+            'nome' => $nome
+        ]);
+
+        echo "Série com id ($serie->id) criada: ($serie->nome)";
     }
 }
