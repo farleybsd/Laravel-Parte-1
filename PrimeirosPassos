@@ -43,3 +43,7 @@ para C:\phpdev\ext
 Criando um form request
 
 php artisan make:request SeriesFormRequest
+
+
+Eloquente
+https://laravel-docs-pt-br.readthedocs.io/en/latest/eloquent/
